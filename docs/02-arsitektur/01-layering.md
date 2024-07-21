@@ -39,4 +39,10 @@ Aplikasi kita dibagi menjadi beberapa layer, dimulai dari layer terdalam:
     
     * Layer **console front end**. Namespace `App\Command`. Terdiri dari
       console command, dan service lain yang berhubungan.
-  
+
+Aturan dasarnya adalah:
+
+* Layer luar boleh mengakses layer dalam, tapi layer dalam tidak boleh
+  mengakses layer di atasnya.
+* Layer dalam boleh membuat interface. Dan layer luar yang membuat
+  implementasinya. Konsep ini dinamakan _dependency inversion principle_.

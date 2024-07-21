@@ -8,8 +8,9 @@ akan disimpan di database. Sedangkan value object tidak memiliki state.
 
 :::caution
 
-Pada tahap ini kita tidak perlu memikirkan teknologi yang digunakan, seperti
-database dan sebagainya. Kita hanya perlu fokus pada model bisnisnya saja.
+Kita menggunakan paradigma DDD. Pada tahap ini kita tidak perlu memikirkan
+teknologi yang digunakan, seperti bagaimana menyimpan ke database dan
+sebagainya. Kita hanya perlu fokus pada model bisnisnya saja.
 
 :::
 
@@ -17,8 +18,8 @@ database dan sebagainya. Kita hanya perlu fokus pada model bisnisnya saja.
 
 Berikut contoh entity untuk `Post`:
 
-```php
-namespace App\Domain;
+```php title="src/Domain/Entity/Post.php"
+namespace App\Domain\Entity;
 
 use Rekalogika\CommonBundle\Domain\Entity\AbstractAggregateRoot;
 use Symfony\Component\Clock\DatePoint;
@@ -107,8 +108,8 @@ class Post extends AbstractAggregateRoot
 
 Karena setiap pos bisa memiliki komentar, maka kita buat entity komentar:
 
-```php
-namespace App\Domain;
+```php title="src/Domain/Entity/Comment.php"
+namespace App\Domain\Entity;
 
 use Rekalogika\CommonBundle\Domain\Entity\AbstractEntity;
 use Symfony\Component\Clock\DatePoint;
@@ -171,7 +172,6 @@ class Post extends AbstractAggregateRoot
     {
         return RecollectionDecorator::create(
             collection: $this->insurables,
-            count: new PrecountingStrategy($this->insurablesCount),
             indexBy: 'id',
             orderBy: ['id' => Order::Descending]
         );
@@ -196,7 +196,7 @@ Yang perlu diperhatikan:
   bahwa `comments` adalah collection dari beberapa objek `Comment` dengan key
   bertipe `string`.
 
-:::info Perbedaan Dengan Symfony dan Doctrine Standard
+:::caution Perbedaan Dengan Symfony dan Doctrine Standard
 
 Kita menggunakan `ArrayCollection` versi kita, bukan yang dari Doctrine,
 [penjelasannya di
@@ -209,7 +209,7 @@ Untuk `getComments()`, kita menggunakan `RecollectionDecorator`, bukan plain
   batch processing dan pagination
 * Otomatis melakukan limit, sehingga tidak akan menghabiskan memori.
 
-Cek infonya [di sini](https://rekalogika.dev/collections).
+Cek info lengkapnya [di sini](https://rekalogika.dev/collections).
 
 Yang mengakses `$this->comments` hanyalah method `getComments()`. Method lain
 harus menggunakan method `getComments()` untuk mengakses data komentar. Ini kita

@@ -60,7 +60,7 @@ Setelah itu kita buatkan implementasinya.
 
 Untuk `Post`:
 
-```php title="src/Infrastructure/Repository/PostRepository.php"
+```php title="src/Infrastructure/Repository/PostRepositoryImpl.php"
 namespace App\Infrastructure\Repository;
 
 use App\Domain\Entity\Post;
@@ -72,7 +72,7 @@ use Rekalogika\Collections\ORM\AbstractRepository;
 /**
  * @extends AbstractRepository<string,Post>
  */
-class PostRepository extends AbstractRepository implements PostRepository
+class PostRepositoryImpl extends AbstractRepository implements PostRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
@@ -87,7 +87,7 @@ class PostRepository extends AbstractRepository implements PostRepository
 
 Untuk `Comment`:
 
-```php title="src/Infrastructure/Repository/CommentRepository.php"
+```php title="src/Infrastructure/Repository/CommentRepositoryImpl.php"
 namespace App\Infrastructure\Repository;
 
 use App\Domain\Entity\Comment;
@@ -99,7 +99,7 @@ use Rekalogika\Collections\ORM\AbstractRepository;
 /**
  * @extends AbstractRepository<string,Comment>
  */
-class CommentRepository extends AbstractRepository implements CommentRepository
+class CommentRepositoryImpl extends AbstractRepository implements CommentRepository
 {
     public function __construct(ManagerRegistry $registry)
     {

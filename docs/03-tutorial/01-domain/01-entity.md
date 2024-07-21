@@ -1,5 +1,5 @@
 ---
-title: Domain
+title: Entity
 ---
 
 Untuk memulai, pertama-tama kita perlu desain domain-nya. Komponen utama domain
@@ -196,7 +196,7 @@ Yang perlu diperhatikan:
   bahwa `comments` adalah collection dari beberapa objek `Comment` dengan key
   bertipe `string`.
 
-:::caution Perbedaan Dengan Symfony dan Doctrine Standard
+:::caution Perbedaan Dengan Symfony dan Doctrine Standar
 
 Kita menggunakan `ArrayCollection` versi kita, bukan yang dari Doctrine,
 [penjelasannya di

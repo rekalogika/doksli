@@ -20,6 +20,13 @@ $postRepository->add($post);
 $entityManager->flush();
 ```
 
+:::caution Perbedaan Dengan Doctrine Standar
+
+Repository standar Doctrine menggunakan `EntitymanagerInterface::persist()`,
+sedangkan repository kita bisa menggunakan `Repository::add()`.
+
+:::
+
 ## Mengambil `Post` dari Database
 
 ```php
@@ -35,6 +42,13 @@ $post = $postRepository->get('91b2679e-47a5-11ef-b06f-8c8caab77b0f');
 // menjadi error 404 di browser
 $post = $postRepository->fetch('91b2679e-47a5-11ef-b06f-8c8caab77b0f');
 ```
+
+:::caution Perbedaan Dengan Doctrine Standar
+
+Repository standar Doctrine menggunakan `find()`, sedangkan repository kita
+menggunakan `get()` dan `fetch()`.
+
+:::
 
 ## Mengubah `Post` dan Menyimpannya ke Database
 
@@ -71,6 +85,13 @@ $postRepository->remove('91b2679e-47a5-11ef-b06f-8c8caa77b0f');
 $entityManager->flush();
 ```
 
+:::caution Perbedaan Dengan Doctrine Standar
+
+Repository standar Doctrine menggunakan `remove()`, sedangkan repository kita
+menggunakan `removeElement()`.
+
+:::
+
 ## Melakukan Iterasi Terhadap Semua `Post`
 
 ```php
@@ -98,3 +119,10 @@ foreach ($postRepository->withItemsPerPage(1000)->getPages() as $page) {
     $entityManager->clear();
 }
 ```
+
+:::caution Perbedaan Dengan Doctrine Standar
+
+Repository standar Doctrine menggunakan `findAll()`, sedangkan repository kita
+adalah `iterable`-nya itu sendiri.
+
+:::

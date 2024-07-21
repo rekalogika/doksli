@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Doksli',
-  tagline: 'Dokumentasi Pengembangan Perangkat Lunak',
+  tagline: 'Dokumentasi Asli Pengembangan Perangkat Lunak',
   favicon: 'img/favicon.ico',
 
   url: 'https://rekalogika.github.io',
@@ -51,7 +51,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Doksli',
         logo: {

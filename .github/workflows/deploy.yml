@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: {}
 
 jobs:
   deploy:
@@ -11,20 +12,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # - uses: awalsh128/cache-apt-pkgs-action@latest
+      #   with:
+      #     packages: graphviz
+      #     version: 1.0
+    
+      - name: Install grapviz
+        run: sudo apt-get install graphviz
+
       - uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: npm
 
-      - name: PlantUML light
-        uses: docker://plantuml/plantuml
+      - uses: actions/setup-java@v4
         with:
-          args: -tsvg -SbackgroundColor=transparent static-src/diagrams/*.wsd -o ../../static/diagrams/light/
+          java-version: '21'
+          distribution: 'temurin'
 
-      - name: PlantUML dark
-        uses: docker://plantuml/plantuml
-        with:
-          args: -tsvg -darkmode -SbackgroundColor=transparent static-src/diagrams/*.wsd -o ../../static/diagrams/dark/
+      - name: PlantUML
+        run: |
+          curl -sSLf -o plantuml.jar https://github.com/plantuml/plantuml/releases/download/v1.2024.6/plantuml-1.2024.6.jar 
+          make diagrams PLANTUML="java -jar plantuml.jar"
 
       - name: Install dependencies
         run: npm ci

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://rekalogika.github.io/doksli/blog</id>
+    <title>Doksli Blog</title>
+    <updated>2024-07-20T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://rekalogika.github.io/doksli/blog"/>
+    <subtitle>Doksli Blog</subtitle>
+    <icon>https://rekalogika.github.io/doksli/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Hello World]]></title>
+        <id>https://rekalogika.github.io/doksli/blog/hello-world</id>
+        <link href="https://rekalogika.github.io/doksli/blog/hello-world"/>
+        <updated>2024-07-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hello world!]]></summary>
+        <content type="html"><![CDATA[<p>Hello world!</p>]]></content>
+        <author>
+            <name>Priyadi Iman Nurcahyo</name>
+            <uri>https://github.com/priyadi</uri>
+        </author>
+        <category label="Hello" term="Hello"/>
+    </entry>
+</feed>

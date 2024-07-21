@@ -4,7 +4,10 @@ title: Repository
 
 Repository pattern adalah pola design yang memberikan abstraksi untuk mengakses
 data. Kita menggunakan repository untuk mengambil dan menyimpan data ke dalam
-database. Hal tersebut dilakukan melalui satu pintu. Apabila ada perubahan cara
+database.
+
+Hal tersebut dilakukan melalui satu pintu. Keluar masuk entity dari dan ke
+database dilakukan hanya melalui repository. Apabila ada perubahan cara
 penyimpanan data, hal tersebut mudah dilakukan karena hanya perlu mengubah
 implementasi repository.
 

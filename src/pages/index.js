@@ -32,8 +32,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Dokumentasi Dev Rekalogika">
+      title={`${siteConfig.title}`}
+      description="Dokumen Asli">
       <HomepageHeader />
     </Layout>
   );

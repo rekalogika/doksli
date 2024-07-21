@@ -17,7 +17,7 @@ const config = {
   organizationName: 'rekalogika', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenMarkdownLinks: 'throw',
   i18n: {
     defaultLocale: 'id',
     locales: ['id'],
@@ -50,6 +50,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          hideable: true,
+          // autoCollapseCategories: true,
+        },
+      },
       // Replace with your project's social card
       // image: 'img/docusaurus-social-card.jpg',
       navbar: {
@@ -121,6 +127,7 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+        additionalLanguages: ['diff', 'php', 'bash', 'twig', 'yaml', 'json', 'markup', 'handlebars', 'liquid', 'diff-php']
       },
     }),
 };

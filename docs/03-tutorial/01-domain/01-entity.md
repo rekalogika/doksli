@@ -34,6 +34,8 @@ class Post extends AbstractAggregateRoot
         string $title,
         string $content,
     ) {
+        parent::__construct();
+
         $this->title = $title;
         $this->createdTime = new DatePoint();
     }
@@ -121,6 +123,8 @@ class Comment extends AbstractEntity
 
     public function __construct(string $content)
     {
+        parent::__construct();
+
         $this->content = $content;
         $this->createdTime = new DatePoint();
     }

@@ -27,6 +27,14 @@ sedangkan repository kita bisa menggunakan `Repository::add()`.
 
 :::
 
+:::info
+
+Setiap entity memiliki ID dalam format UUIDv7 yang dapat diperoleh dengan cara
+`$entity->getId()`. ID ini digenerate oleh aplikasi, bukan database, dan sudah
+tersedia sejak entity pertama kali dibuat.
+ 
+:::
+
 ## Mengambil `Post` dari Database
 
 ```php

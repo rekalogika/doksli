@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Hello World","permalink":"/doksli/blog/hello-world","unlisted":false,"date":"2024-07-20T00:00:00.000Z"}]}')}}]);

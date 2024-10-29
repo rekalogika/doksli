@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[979],{4341:e=>{e.exports=JSON.parse('{"authors":[{"name":"Priyadi Iman Nurcahyo","title":"Lead Engineer","url":"https://github.com/priyadi","imageURL":"https://github.com/priyadi.png","key":"priyadi","page":null,"count":1}]}')}}]);
